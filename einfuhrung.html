@@ -1,0 +1,864 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Einführung in Entity Framework 5 Code First anhand von Beispielen">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/de-ef5cf-oct-2012/einfuhrung.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="das---eine-fallstudie.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>1. Einführung - Einführung in Entity Framework 5 Code First anhand von Beispielen</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Einführung in Entity Framework 5 Code First anhand von Beispielen";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-einfuhrung" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Einführung in Entity Framework 5 Code First anhand von Beispielen" class="md-header__button md-logo" aria-label="Einführung in Entity Framework 5 Code First anhand von Beispielen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Einführung in Entity Framework 5 Code First anhand von Beispielen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Einführung
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum Dunkelmodus wechseln"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Zum Dunkelmodus wechseln" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum Hellmodus wechseln"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Zum Hellmodus wechseln" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/stahe/de-ef5cf-oct-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Einführung in Entity Framework 5 Code First anhand von Beispielen" class="md-nav__button md-logo" aria-label="Einführung in Entity Framework 5 Code First anhand von Beispielen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Einführung in Entity Framework 5 Code First anhand von Beispielen
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/stahe/de-ef5cf-oct-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Willkommen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einführung
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="einfuhrung.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einführung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-ziel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Ziel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-verwendete-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Verwendete Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-quellcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Quellcode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-der-ansatz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Der Ansatz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-zielgruppe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Zielgruppe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-verwandte-artikel-auf-developpezcom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6. Verwandte Artikel auf developpez.com
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="das---eine-fallstudie.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Das „ “: Eine Fallstudie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fallstudie-mit-sql-server-express-2012.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Fallstudie mit SQL Server Express 2012
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fallstudie-mit-mysql-5528.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Fallstudie mit MySQL 5.5.28
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fallstudie-mit-oracle-database-express-edition-11g-release-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Fallstudie mit Oracle Database Express Edition 11g Release 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fallstudie-mit-postgresql-921.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fallstudie mit PostgreSQL 9.2.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fallstudie-mit-firebird-21.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Fallstudie mit Firebird 2.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fazit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Fazit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p><a id="refheading39705804107930"></a></p>
+<h1 id="1-einfuhrung">1. <span style="color: #365f91">Einführung</span></h1>
+<p><a id="refheading39707804107930"></a></p>
+<h2 id="11-ziel">1.1. <span style="color: #4f81bd">Ziel</span></h2>
+<p>Das PDF des Dokuments ist |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQDC5ZcAX-dRT4gIsvpIJoggATTzvN9gPZpgZ4LfSTUai0I?e=4YQdgp">HIER</a>| verfügbar.</p>
+<p>Die Beispiele im Dokument sind |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQA344nuzMpNRIgz2_KIs-hJAahtX594ypVZCAsY8Fxt4R8?e=FSQY8c">HIER</a>| verfügbar.</p>
+<p>Entity Framework ist ein ORM (Object Relational Mapper), das ursprünglich von Microsoft entwickelt wurde und nun als Open Source verfügbar ist [Juli 2012, http://entityframework.codeplex.com/]. In einem ASP.NET-Kurs verwende ich für eine bestimmte Webanwendung die folgende Architektur:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007D200000183315F4E40.png" width="680" height="131" style="display:inline-block; margin:4px;width:17.999cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D200000183315F4E40.png" /></td></tr></table>
+
+<p>Das NHibernate-Framework [http://sourceforge.net/projects/nhibernate/] ist ein ORM, das bereits vor Entity Framework existierte. Es handelt sich um ein ausgereiftes Produkt, das die Anbindung an verschiedene Datenbanken ermöglicht. Das ORM trennt die [DAO]-Schicht (Data Access Objects) vom ADO.NET-Connector. Es ist das ORM, das SQL-Befehle an den Connector sendet. Die [DAO]-Schicht wiederum nutzt die vom ORM bereitgestellte Schnittstelle. Diese Schnittstelle ist vom ORM abhängig. Daher erfordert ein Wechsel des ORM eine Änderung der [DAO]-Schicht.</p>
+<p>Diese Architektur ist widerstandsfähig gegenüber Änderungen am DBMS.</p>
+<p>Wenn die [DAO]-Schicht direkt mit dem ADO.NET-Konnektor verbunden ist, wirkt sich eine Änderung des DBMS auf die [DAO]-Schicht aus:</p>
+<ul>
+<li>nicht alle DBMS verfügen über dieselben Datentypen;</li>
+<li>DBMS verwenden nicht dieselben Strategien zur Generierung von Primärschlüsseln;</li>
+<li>DBMS verwenden proprietäres SQL;</li>
+<li>die [DAO]-Schicht hat möglicherweise Bibliotheken verwendet, die an ein bestimmtes DBMS gebunden sind;</li>
+<li>...</li>
+</ul>
+<p>Wenn ein ORM mit dem ADO.NET-Konnektor verbunden ist, erfordert ein Wechsel des DBMS lediglich die Konfiguration des ORM, um es an das neue DBMS anzupassen. Die [DAO]-Schicht bleibt unverändert.</p>
+<p>Das <strong>Spring.</strong>NET-Framework [http://www.springframework.net/index.html] gewährleistet die Integration der Schichten einer Anwendung. Oben: </p>
+<ul>
+<li>Die ASP.NET-Anwendung fordert von Spring eine Referenz auf die [DAO]-Schicht an;</li>
+<li>Spring verwendet eine Konfigurationsdatei, um diese Schicht zu erstellen und die Referenz zurückzugeben.</li>
+</ul>
+<p>Diese Architektur bewältigt Änderungen an den Schichten gut, solange die Schichten weiterhin dieselbe Schnittstelle bereitstellen. Eine Änderung der obigen [DAO]-Schicht erfordert eine Anpassung der Spring-Konfigurationsdatei, sodass die neue Schicht anstelle der alten instanziiert wird. Da beide Schichten dieselbe Schnittstelle implementieren und die ASP.NET-Schicht diese Schnittstelle nutzt, bleibt die ASP.NET-Schicht unverändert.</p>
+<p>Wir haben hier also eine flexible und skalierbare Architektur. Um dies zu veranschaulichen, werden wir das NHibernate-ORM durch Entity Framework 5 ersetzen:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007D7000001825B1CF7DD.png" width="680" height="131" style="display:inline-block; margin:4px;width:17.999cm;height:3.463cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D7000001825B1CF7DD.png" /></td></tr></table>
+
+<p>Wir werden in mehreren Schritten vorgehen:</p>
+<ul>
+<li>Wir werden Entity Framework 5 mit verschiedenen DBMS untersuchen;</li>
+<li>wir werden die [DAO2]-Schicht erstellen;</li>
+<li>wir werden die bestehende ASP.NET-Anwendung mit dieser neuen [DAO]-Schicht verbinden.</li>
+</ul>
+<p><a id="refheading39709804107930"></a>
+<a id="outils"></a></p>
+<h2 id="12-verwendete-tools">1.2. <span style="color: #4f81bd">Verwendete Tools</span></h2>
+<p>Die Tests wurden auf einem HP EliteBook-Laptop mit Windows 7 Pro, einem Intel Core i7-Prozessor und 8 GB RAM durchgeführt. Als Entwicklungssprache verwenden wir C#.</p>
+<p>In diesem Dokument werden die folgenden Tools verwendet, die alle kostenlos verfügbar sind:</p>
+<p><strong>Entwicklungs-IDEs</strong>:</p>
+<ul>
+<li>Visual Studio Express for Desktop 2012 [http://www.microsoft.com/visualstudio/fra/downloads];</li>
+<li>Visual Studio Express for Web 2012 [http://www.microsoft.com/visualstudio/fra/downloads].</li>
+</ul>
+<p><strong>Das DBMS SQL Server Express 2012</strong>:</p>
+<ul>
+<li>das DBMS: [http://www.microsoft.com/fr-fr/download/details.aspx?id=29062];</li>
+<li>ein Verwaltungstool: EMS SQL Manager for SQL Server Freeware [http://www.sqlmanager.net/fr/products/mssql/manager/download].</li>
+</ul>
+<p><strong>Das DBMS Oracle Database Express Edition 11g Release 2</strong>:</p>
+<ul>
+<li>das DBMS: [http://www.oracle.com/technetwork/products/express-edition/downloads/index.html];</li>
+<li>ein Verwaltungstool: EMS SQL Manager for Oracle Freeware [http://www.sqlmanager.net/fr/products/oracle/manager/download];</li>
+<li>ein Oracle-Client für .NET: ODAC 11.2 Release 5 (11.2.0.3.20) mit Oracle Developer Tools für Visual Studio: [http://www.oracle.com/technetwork/developer-tools/visual-studio/downloads/index.html].</li>
+</ul>
+<p><strong>Das DBMS MySQL 5.5.28</strong>:</p>
+<ul>
+<li>das DBMS: [http://dev.mysql.com/downloads/];</li>
+<li>ein Verwaltungstool: EMS SQL Manager for MySQL Freeware [http://www.sqlmanager.net/fr/products/mysql/manager/download].</li>
+</ul>
+<p><strong>Das DBMS PostgreSQL 9.2.1</strong>:</p>
+<ul>
+<li>das DBMS: [http://www.enterprisedb.com/products-services-training/pgdownload#windows];</li>
+<li>ein Verwaltungstool: EMS SQL Manager for PostgreSQL Freeware [http://www.sqlmanager.net/fr/products/postgresql/manager/download].</li>
+</ul>
+<p><strong>Das DBMS Firebird 2.1</strong>:</p>
+<ul>
+<li>das DBMS: [http://www.firebirdsql.org/en/firebird-2-1-5/];</li>
+<li>ein Verwaltungstool: EMS SQL Manager für InterBase/Firebird Freeware [http://www.sqlmanager.net/fr/products/ibfb/manager/download].</li>
+</ul>
+<p><strong>LINQPad 4</strong>: ein Tool zum Erlernen von LINQ (Language INtegrated Query) [http://www.linqpad.net/, http://www.linqpad.net/GetFile.aspx?LINQPad4.zip].</p>
+<p><a id="refheading39711804107930"></a></p>
+<h2 id="13-quellcode">1.3. <span style="color: #4f81bd">Quellcode</span></h2>
+<p>Der Quellcode für die folgenden Beispiele ist |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQA344nuzMpNRIgz2_KIs-hJAahtX594ypVZCAsY8Fxt4R8?e=FSQY8c">HIER</a>| verfügbar.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006740000038FC08B9EA9.png" width="578" height="319" style="display:inline-block; margin:4px;width:15.3cm;height:8.437cm;" class="odt-zoomable" data-zoom-src="images/10000000000006740000038FC08B9EA9.png" /></td></tr></table>
+
+<p>Es handelt sich um Visual Studio 2012-Projekte [1], die in einer Lösung [2] zusammengefasst sind. Im Ordner [databases] befindet sich für jedes verwendete DBMS ein eigener Ordner. Diese Ordner enthalten die SQL-Skripte zur Erstellung der Beispieldatenbank für die jeweiligen DBMS.</p>
+<p><a id="refheading39713804107930"></a></p>
+<h2 id="14-der-ansatz">1.4. <span style="color: #4f81bd">Der Ansatz</span></h2>
+<p>Um mehr über <strong>Entity Framework 5 Code First</strong> zu erfahren, habe ich mit dem folgenden Buch begonnen: <strong>„Professional ASP.NET MVC</strong> 3“ von Jon Galloway, Phil Haack, Brad Wilson und Scott Allen, erschienen bei Wrox. In der Beispielanwendung des Buches verwenden die Autoren  <strong>Entity Framework</strong> (<strong>EF</strong>) als ORM. Da ich damit nicht vertraut war, habe ich im Internet recherchiert, um mehr darüber zu erfahren. Ich stellte fest, dass die aktuellste Version EF 5 war und dass es Inkompatibilitäten mit EF 4 gab, da der Code aus dem Buch bei Tests mit EF 5 Kompilierungsfehler verursachte.</p>
+<p>Dann stellte ich fest, dass es mehrere Möglichkeiten gibt, EF zu verwenden:</p>
+<ul>
+<li><strong>Model First</strong>: Es gibt viele Artikel zu diesem Ansatz für EF, zum Beispiel [http://msdn.microsoft.com/en-us/data/ff830362.aspx]. Dieser Artikel beginnt wie folgt:</li>
+</ul>
+<p><strong>Zusammenfassung</strong>: In diesem Artikel befassen wir uns mit dem neuen Entity Framework 4, das mit .NET Framework 4 und Visual Studio 2010 ausgeliefert wird. Ich werde erläutern, wie Sie die Nutzung aus einer Model-First-Perspektive angehen können, basierend auf der Prämisse, dass Sie das Datenbankdesign von einem Modell aus steuern und sowohl Ihre Datenbank als auch Ihre Datenzugriffsschicht deklarativ aus diesem Modell aufbauen können. Das Modell enthält die Beschreibung Ihrer Daten, dargestellt als Entitäten und Beziehungen, und bietet einen leistungsstarken Ansatz für die Arbeit mit ADO.NET sowie eine Trennung der Anliegen durch eine Abstraktion zwischen einer Modelldefinition und ihrer Implementierung.</p>
+<p>Ein ORM überbrückt die Lücke zwischen Datenbanktabellen und Klassen.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007DB000001801B234BCE.png" width="680" height="130" style="display:inline-block; margin:4px;width:17.999cm;height:3.438cm;" class="odt-zoomable" data-zoom-src="images/10000000000007DB000001801B234BCE.png" /></td></tr></table>
+
+<p>Oben,</p>
+<ul>
+<li>links von der EF5-Schicht befinden sich Objekte, die wir Entitäten nennen;</li>
+<li>rechts von der EF5-Schicht befinden sich Datenbanktabellen.</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007E6000001174D032921.png" width="680" height="94" style="display:inline-block; margin:4px;width:17.999cm;height:2.484cm;" class="odt-zoomable" data-zoom-src="images/10000000000007E6000001174D032921.png" /></td></tr></table>
+
+<p>Die [DAO]-Schicht arbeitet mit Objekten, die Datenbanktabellen repräsentieren. Diese Objekte sind in einem Persistenzkontext zusammengefasst und werden als Entitäten (Entity) bezeichnet. Änderungen an den Entitäten werden über das ORM in den Datenbanktabellen übernommen (Einfügen, Ändern, Löschen). Zusätzlich verwendet die [DAO]-Schicht ein Abfragesprachen , das LINQ to Entities (Language-Integrated Query) genannt wird und Entitäten statt Tabellen abfragt. Der Model-First-Ansatz beinhaltet die Erstellung von Entitäten mithilfe eines grafischen Tools. Sie definieren jede Entität und die Beziehungen, die sie mit anderen verbinden. Sobald dies geschehen ist, generiert das Tool:</p>
+<ul>
+<li>die verschiedenen Klassen, die die grafisch erstellten Entitäten widerspiegeln;</li>
+<li>die DDL (Data Definition Language), die zur Generierung der Datenbank verwendet wird.</li>
+</ul>
+<p>Die Beispiele, die ich für diese Methode gefunden habe, verwendeten alle Visual Studio 2010 Professional und ein Modell namens <strong>ADO.NET Entity Data Model</strong>. Ich konnte dieses Modell zwar mit Visual Studio 2010 Professional testen, doch als ich zu Visual Studio Express 2012 wechselte – meiner eigentlichen Zielumgebung –, stellte ich fest, dass dieses Modell dort nicht mehr verfügbar war. Daher habe ich diesen Ansatz aufgegeben.</p>
+<ul>
+<li><strong>Database First</strong>: Ausgangspunkt für diese Methode ist eine vorhandene Datenbank. Von dort aus generiert ein Tool automatisch die Entitätsmodelle für die Datenbanktabellen. Auch hier verwenden die Beispiele, die ich gefunden habe, wie beispielsweise [http://msdn.microsoft.com/en-us/data/gg685489.aspx], Visual Studio 2010 Professional und das ADO.NET Entity Data Model. Daher habe ich auch diesen Ansatz aufgegeben, obwohl er mir am besten gefiel. Um zu bestimmen, welche Entitäten als Darstellungen einer bestehenden Datenbank verwendet werden sollten, war es naheliegend, mit einem Tool zu beginnen, das diese generiert.</li>
+<li><strong>Code First</strong>: Man schreibt die Klassen, aus denen die Entitäten bestehen, selbst. Dies erfordert zumindest ein grundlegendes Verständnis der Funktionsweise von EF. Diesen Ansatz habe ich gewählt, da er mit Visual Studio Express 2012 kompatibel war.</li>
+</ul>
+<p>Vor diesem Hintergrund ging ich wie folgt vor:</p>
+<ul>
+<li>Ich habe Code für SQL Server Express 2012 geschrieben, da dies das DBMS ist, für das die meisten Beispiele verfügbar sind;</li>
+<li>sobald dieser Code debuggt war, habe ich ihn auf die anderen DBMS (Firebird, Oracle, MySQL, PostgreSQL) portiert.</li>
+</ul>
+<p>Hier werden wir anders vorgehen. Ich werde zunächst den gesamten Code für SQL Server beschreiben und anschließend erläutern, wie er auf die anderen DBMS portiert wurde. Bei diesem Portierungsprozess wurden folgende Anpassungen vorgenommen:</p>
+<ul>
+<li>Datenbanken verfügen über proprietäre Funktionen. Insbesondere habe ich Trigger verwendet, um den Inhalt bestimmter Spalten automatisch zu generieren. Jedes DBMS hat seine eigene Art, damit umzugehen;</li>
+<li>die Bildentitäten in den Tabellen können sich ändern, dies ist jedoch beabsichtigt. Ich hätte Entitäten wählen können, die für alle Datenbanken geeignet sind;</li>
+<li>Der ADO.NET-Treiber für das DBMS ändert sich;</li>
+<li>die Verbindungszeichenfolge zum DBMS ändert sich.</li>
+</ul>
+<p>Der gewählte Ansatz ist wie folgt:</p>
+<ul>
+<li>Entitäts-/Datenbank-Zuordnung. Befüllen der Datenbank;</li>
+<li>Auslesen der Datenbank mithilfe von LINQ-Abfragen;</li>
+<li>LINQPad, ein Tool zum Erlernen von LINQ;</li>
+<li>Hinzufügen, Löschen und Ändern von Entitäten;</li>
+<li>Verwaltung des parallelen Zugriffs;</li>
+<li>In einer Transaktion gespeicherter Persistenzkontext;</li>
+<li>Ändern einer Entität außerhalb des Persistenzkontexts;</li>
+<li>Eager- und Lazy-Loading;</li>
+<li>Aufbau der [DAO]-Schicht;</li>
+<li>Aufbau der ASP.NET-Webschicht.
+<a id="refheading39715804107930"></a></li>
+</ul>
+<h2 id="15-zielgruppe">1.5. <span style="color: #4f81bd">Zielgruppe</span></h2>
+<p>Dieses Dokument richtet sich an <strong>Anfänger</strong>.</p>
+<p>Dieses Dokument ist kein Kurs zu <strong>Entity Framework 5 Code First</strong>. Dazu empfiehlt sich beispielsweise die Lektüre von <strong>„Programming Entity Framework: Code</strong> First“ von Julie Lerman und Rowan Miller, erschienen bei O&#x27;Reilly. Dieses Dokument erhebt keinen Anspruch auf Vollständigkeit, sondern skizziert lediglich den Ansatz, den ich zum Verständnis dieses ORM verwendet habe. Ich glaube, dass dieser Ansatz für andere, die mit EF5 arbeiten, nützlich sein kann. Mein Ziel geht nicht über diesen Rahmen hinaus.</p>
+<p><a id="refheading39717804107930"></a></p>
+<h2 id="16-verwandte-artikel-auf-developpezcom">1.6. <span style="color: #4f81bd">Verwandte Artikel auf developpez.com</span></h2>
+<p>Das oben genannte Buch dient als Referenz. Auf <em>developpez.com</em> gibt es auch Artikel, die sich speziell mit Entity Framework befassen. Hier sind einige davon:</p>
+<ul>
+<li>„<a href="http://reward.developpez.com/tutoriels/dotnet/entity-framework/approche-code-first/"><u><span style="color: #0563c1">Entity Framework – der Code-First-Ansatz</span></u></a>“, Juni 2012 – von <a href="http://www.developpez.net/forums/u44091/reward/"><u><span style="color: #0563c1">Reward</span></u></a>. Dieser Artikel und das vorliegende Dokument überschneiden sich teilweise. Er geht jedoch auf bestimmte Punkte näher ein, insbesondere hinsichtlich der „Zuordnung“ von Klassenvererbung &lt;--&gt; Tabellen;</li>
+<li>„<a href="http://pmusso.developpez.com/tutoriels/dotnet/entity-framework/introduction/"><u><span style="color: #0563c1">Einführung in Entity Framework</span></u></a>“, Dezember 2008, von <a href="http://pmusso.developpez.com/"><u><span style="color: #0563c1">Paul Musso</span></u></a>;</li>
+<li>„<a href="http://dotnet.developpez.com/mvc/mvc-entity-framework/"><u><span style="color: #0563c1">Erstellen eines Klassenmodells mit Entity</span></u></a> Framework“, April 2009, von <a href="http://dotnet.developpez.com/mvc/mvc-entity-framework/"><u><span style="color: #0563c1">Jérôme Lambert</span></u></a>;</li>
+<li>„<a href="http://immobilis.developpez.com/tutoriels/dotnet/test-performance-acces-donnees-linq-vs-sql-vs-entity-framework/"><u><span style="color: #0563c1">Leistungsmessung von Linq to SQL im Vergleich zu SQL und Entity Framework</span></u></a>“, Juni 2011, von <a href="http://www.developpez.net/forums/u33118/immobilis/"><u><span style="color: #0563c1">Immobilis</span></u></a>;</li>
+<li>„<a href="http://blog.developpez.com/lilroma/p11097/net/entity_framework_code_first_activer_la_m"><u><span style="color: #0563c1">Entity Framework Code First: Automatische Migration aktivieren</span></u></a>“, Juni 2012, von <a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>;</li>
+<li>„<a href="http://rdonfack.developpez.com/tutoriels/dotnet/webmatrix-application-crud-entity-framework/"><u><span style="color: #0563c1">Erstellen einer CRUD-Anwendung mit WebMatrix, Razor und Entity Framework</span></u></a>“, Mai 2012, von <a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>;</li>
+<li>„<a href="http://rdonfack.developpez.com/tutoriels/dotnet/entity-framework-decouverte-code-first-migrations/codefirstmigrations.pdf"><u><span style="color: #0563c1">Entity Framework: Code-First-Migrationen erkunden</span></u></a>“, Juni 2012, von <a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>;</li>
+</ul>
+<p>Wie oben erwähnt, ist dieses Dokument nicht vollständig. Lesern empfiehlt es sich, die oben aufgeführten Artikel zu konsultieren, um bestimmte Lücken zu schließen. Meine Recherche ist möglicherweise unvollständig. Ich entschuldige mich bei allen Autoren, die ich möglicherweise übersehen habe.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Dieses Tutorial, verfasst von <strong>Serge Tahé</strong>, wird der Öffentlichkeit unter den Bedingungen der
+<em>Creative Commons Namensnennung – Nicht kommerziell –
+Weitergabe unter gleichen Bedingungen 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
