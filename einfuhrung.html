@@ -18,7 +18,7 @@
         <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="das---eine-fallstudie.html">
+        <link rel="next" href="die--fallstudie.html">
       
       
         
@@ -365,10 +365,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#11-ziel" class="md-nav__link">
+  <a href="#11-objectif" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1. Ziel
+        1.1. Objectif
       
     </span>
   </a>
@@ -387,10 +387,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-quellcode" class="md-nav__link">
+  <a href="#13-die-quellcodes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.3. Quellcode
+        1.3. Die Quellcodes
       
     </span>
   </a>
@@ -398,10 +398,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#14-der-ansatz" class="md-nav__link">
+  <a href="#14-die-vorgehensweise" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.4. Der Ansatz
+        1.4. Die Vorgehensweise
       
     </span>
   </a>
@@ -420,10 +420,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#16-verwandte-artikel-auf-developpezcom" class="md-nav__link">
+  <a href="#16-verwandte-artikel-zu-developpezcom" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.6. Verwandte Artikel auf developpez.com
+        1.6. Verwandte Artikel zu developpez.com
       
     </span>
   </a>
@@ -445,14 +445,14 @@
   
   
     <li class="md-nav__item">
-      <a href="das---eine-fallstudie.html" class="md-nav__link">
+      <a href="die--fallstudie.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Das „ “: Eine Fallstudie
+    2. Die -Fallstudie
   
 
     
@@ -647,154 +647,154 @@
   
 
 
-<p><a id="refheading39705804107930"></a></p>
+<p><span id="refheading39705804107930" name="refheading39705804107930" class="odt-bookmark-anchor"></span></p>
 <h1 id="1-einfuhrung">1. <span style="color: #365f91">Einführung</span></h1>
-<p><a id="refheading39707804107930"></a></p>
-<h2 id="11-ziel">1.1. <span style="color: #4f81bd">Ziel</span></h2>
-<p>Das PDF des Dokuments ist |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQDC5ZcAX-dRT4gIsvpIJoggATTzvN9gPZpgZ4LfSTUai0I?e=4YQdgp">HIER</a>| verfügbar.</p>
-<p>Die Beispiele im Dokument sind |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQA344nuzMpNRIgz2_KIs-hJAahtX594ypVZCAsY8Fxt4R8?e=FSQY8c">HIER</a>| verfügbar.</p>
-<p>Entity Framework ist ein ORM (Object Relational Mapper), das ursprünglich von Microsoft entwickelt wurde und nun als Open Source verfügbar ist [Juli 2012, http://entityframework.codeplex.com/]. In einem ASP.NET-Kurs verwende ich für eine bestimmte Webanwendung die folgende Architektur:</p>
+<p><span id="refheading39707804107930" name="refheading39707804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="11-objectif">1.1. <span style="color: #4f81bd">Objectif</span></h2>
+<p>Das PDF des Dokuments ist verfügbar |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQDC5ZcAX-dRT4gIsvpIJoggATTzvN9gPZpgZ4LfSTUai0I?e=YED9Mb">HIER</a>|.</p>
+<p>Die Beispiele des Dokuments sind verfügbar |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQA344nuzMpNRIgz2_KIs-hJAahtX594ypVZCAsY8Fxt4R8?e=crgPAO">HIER</a>|.</p>
+<p>Entity Framework ist ein ORM (Object Relational Mapper), der ursprünglich von Microsoft entwickelt wurde und nun als Open-Source-Software [juillet 2012, http://entityframework.codeplex.com/] verfügbar ist. In einem Kurs ASP.NET verwende ich die folgende Architektur für eine bestimmte Webanwendung:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007D200000183315F4E40.png" width="680" height="131" style="display:inline-block; margin:4px;width:17.999cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D200000183315F4E40.png" /></td></tr></table>
 
-<p>Das NHibernate-Framework [http://sourceforge.net/projects/nhibernate/] ist ein ORM, das bereits vor Entity Framework existierte. Es handelt sich um ein ausgereiftes Produkt, das die Anbindung an verschiedene Datenbanken ermöglicht. Das ORM trennt die [DAO]-Schicht (Data Access Objects) vom ADO.NET-Connector. Es ist das ORM, das SQL-Befehle an den Connector sendet. Die [DAO]-Schicht wiederum nutzt die vom ORM bereitgestellte Schnittstelle. Diese Schnittstelle ist vom ORM abhängig. Daher erfordert ein Wechsel des ORM eine Änderung der [DAO]-Schicht.</p>
-<p>Diese Architektur ist widerstandsfähig gegenüber Änderungen am DBMS.</p>
-<p>Wenn die [DAO]-Schicht direkt mit dem ADO.NET-Konnektor verbunden ist, wirkt sich eine Änderung des DBMS auf die [DAO]-Schicht aus:</p>
+<p>Das Framework <strong>NHibernate</strong> [http://sourceforge.net/projects/nhibernate/] ist ein ORM, das bereits vor dem Entity Framework auf den Markt kam. Es handelt sich um ein ausgereiftes Produkt, das die Anbindung an verschiedene Datenbanken ermöglicht. Das ORM isoliert die Schicht [DAO] (Data Access Objects) vom Konnektor ADO.NET. Es ist das ORM, das die Befehle SQL an den Konnektor sendet. Die Schicht [DAO] nutzt ihrerseits die vom ORM bereitgestellte Schnittstelle. Diese hängt vom ORM ab. Ein Wechsel des ORM hat daher zur Folge, dass auch die Schicht [DAO] geändert werden muss.</p>
+<p>Diese Architektur ist gegenüber Änderungen an SGBD sehr widerstandsfähig.</p>
+<p>Wenn die Schicht [DAO] direkt mit dem Konnektor ADO.NET verbunden wird, wirkt sich eine Änderung an SGBD auf die Schicht [DAO] aus:</p>
 <ul>
-<li>nicht alle DBMS verfügen über dieselben Datentypen;</li>
-<li>DBMS verwenden nicht dieselben Strategien zur Generierung von Primärschlüsseln;</li>
-<li>DBMS verwenden proprietäres SQL;</li>
-<li>die [DAO]-Schicht hat möglicherweise Bibliotheken verwendet, die an ein bestimmtes DBMS gebunden sind;</li>
+<li>Die SGBD haben nicht alle denselben Datentyp;</li>
+<li>die SGBD haben nicht dieselben Strategien zur Generierung der Primärschlüssel;</li>
+<li>die SGBD enthalten proprietäre SQL;</li>
+<li>die Schicht [DAO] hat möglicherweise Bibliotheken verwendet, die mit einem bestimmten SGBD verknüpft sind;</li>
 <li>...</li>
 </ul>
-<p>Wenn ein ORM mit dem ADO.NET-Konnektor verbunden ist, erfordert ein Wechsel des DBMS lediglich die Konfiguration des ORM, um es an das neue DBMS anzupassen. Die [DAO]-Schicht bleibt unverändert.</p>
-<p>Das <strong>Spring.</strong>NET-Framework [http://www.springframework.net/index.html] gewährleistet die Integration der Schichten einer Anwendung. Oben: </p>
+<p>Wenn ein ORM mit dem Konnektor ADO.NET verbunden ist, bedeutet ein Wechsel von SGBD, dass die Konfiguration von ORM an das neue SGBD angepasst wird. Die Schicht [DAO] bleibt unverändert.</p>
+<p>Das Framework <strong>Spring.NET</strong> [http://www.springframework.net/index.html] sorgt für die Integration der Schichten einer Anwendung. Oben: </p>
 <ul>
-<li>Die ASP.NET-Anwendung fordert von Spring eine Referenz auf die [DAO]-Schicht an;</li>
-<li>Spring verwendet eine Konfigurationsdatei, um diese Schicht zu erstellen und die Referenz zurückzugeben.</li>
+<li>fordert die Anwendung ASP.NET von Spring eine Referenz auf die Schicht [DAO] an;</li>
+<li>Spring nutzt eine Konfigurationsdatei, um diese Schicht zu erstellen und die Referenz darauf zurückzugeben.</li>
 </ul>
-<p>Diese Architektur bewältigt Änderungen an den Schichten gut, solange die Schichten weiterhin dieselbe Schnittstelle bereitstellen. Eine Änderung der obigen [DAO]-Schicht erfordert eine Anpassung der Spring-Konfigurationsdatei, sodass die neue Schicht anstelle der alten instanziiert wird. Da beide Schichten dieselbe Schnittstelle implementieren und die ASP.NET-Schicht diese Schnittstelle nutzt, bleibt die ASP.NET-Schicht unverändert.</p>
-<p>Wir haben hier also eine flexible und skalierbare Architektur. Um dies zu veranschaulichen, werden wir das NHibernate-ORM durch Entity Framework 5 ersetzen:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007D7000001825B1CF7DD.png" width="680" height="131" style="display:inline-block; margin:4px;width:17.999cm;height:3.463cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D7000001825B1CF7DD.png" /></td></tr></table>
+<p>Diese Architektur ist gegenüber Änderungen an den Schichten sehr widerstandsfähig, solange diese stets dieselbe Schnittstelle aufweisen. Um die oben genannte Schicht [DAO] zu ändern, muss lediglich die Spring-Konfigurationsdatei angepasst werden, damit die neue Schicht anstelle der alten instanziiert wird. Da diese die gleiche Schnittstelle implementieren und die Schicht ASP.NET diese Schnittstelle nutzt, bleibt die Schicht ASP.NET unverändert.</p>
+<p>Wir haben es hier also mit einer flexiblen und skalierbaren Architektur zu tun. Um dies zu veranschaulichen, werden wir die Schicht ORM durch Entity Framework 5 ersetzen:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007D7000001825B1CF7DD.png" width="680" height="131" style="display:inline-block; margin:4px;width:17.999cm;height:3.461cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D7000001825B1CF7DD.png" /></td></tr></table>
 
 <p>Wir werden in mehreren Schritten vorgehen:</p>
 <ul>
-<li>Wir werden Entity Framework 5 mit verschiedenen DBMS untersuchen;</li>
-<li>wir werden die [DAO2]-Schicht erstellen;</li>
-<li>wir werden die bestehende ASP.NET-Anwendung mit dieser neuen [DAO]-Schicht verbinden.</li>
+<li>Zunächst werden wir Entity Framework 5 anhand mehrerer SGBD-Dateien kennenlernen;</li>
+<li>wir werden die Schicht [DAO2] aufbauen;</li>
+<li>wir werden die bestehende Anwendung ASP.NET mit dieser neuen Schicht [DAO] verbinden.</li>
 </ul>
-<p><a id="refheading39709804107930"></a>
-<a id="outils"></a></p>
+<p><span id="refheading39709804107930" name="refheading39709804107930" class="odt-bookmark-anchor"></span>
+<span id="outils" name="outils" class="odt-bookmark-anchor"></span></p>
 <h2 id="12-verwendete-tools">1.2. <span style="color: #4f81bd">Verwendete Tools</span></h2>
-<p>Die Tests wurden auf einem HP EliteBook-Laptop mit Windows 7 Pro, einem Intel Core i7-Prozessor und 8 GB RAM durchgeführt. Als Entwicklungssprache verwenden wir C#.</p>
+<p>Die Tests wurden auf einem Laptop HP EliteBook mit Windows 7 Pro, einem Intel Core i7-Prozessor und 8 GB RAM durchgeführt. Als Entwicklungssprache verwenden wir C#.</p>
 <p>In diesem Dokument werden die folgenden Tools verwendet, die alle kostenlos verfügbar sind:</p>
-<p><strong>Entwicklungs-IDEs</strong>:</p>
+<p><strong>Entwicklungswerkzeuge</strong>:</p>
 <ul>
-<li>Visual Studio Express for Desktop 2012 [http://www.microsoft.com/visualstudio/fra/downloads];</li>
-<li>Visual Studio Express for Web 2012 [http://www.microsoft.com/visualstudio/fra/downloads].</li>
+<li>Visual Studio Express für den Desktop 2012 [http://www.microsoft.com/visualstudio/fra/downloads];</li>
+<li>Visual Studio Express für das Web 2012 [http://www.microsoft.com/visualstudio/fra/downloads].</li>
 </ul>
-<p><strong>Das DBMS SQL Server Express 2012</strong>:</p>
+<p><strong>SGBD SQL Server Express 2012</strong>:</p>
 <ul>
-<li>das DBMS: [http://www.microsoft.com/fr-fr/download/details.aspx?id=29062];</li>
-<li>ein Verwaltungstool: EMS SQL Manager for SQL Server Freeware [http://www.sqlmanager.net/fr/products/mssql/manager/download].</li>
+<li>SGBD: [http://www.microsoft.com/fr-fr/download/details.aspx?id=29062];</li>
+<li>ein Verwaltungstool: EMS, SQL Manager für SQL Server Freeware [http://www.sqlmanager.net/fr/products/mssql/manager/download].</li>
 </ul>
-<p><strong>Das DBMS Oracle Database Express Edition 11g Release 2</strong>:</p>
+<p><strong>SGBD Oracle Database Express Edition 11g Release 2</strong>:</p>
 <ul>
-<li>das DBMS: [http://www.oracle.com/technetwork/products/express-edition/downloads/index.html];</li>
+<li>SGBD: [http://www.oracle.com/technetwork/products/express-edition/downloads/index.html];</li>
 <li>ein Verwaltungstool: EMS SQL Manager for Oracle Freeware [http://www.sqlmanager.net/fr/products/oracle/manager/download];</li>
 <li>ein Oracle-Client für .NET: ODAC 11.2 Release 5 (11.2.0.3.20) mit Oracle Developer Tools für Visual Studio: [http://www.oracle.com/technetwork/developer-tools/visual-studio/downloads/index.html].</li>
 </ul>
-<p><strong>Das DBMS MySQL 5.5.28</strong>:</p>
+<p><strong>SGBD MySQL 5.5.28</strong>:</p>
 <ul>
-<li>das DBMS: [http://dev.mysql.com/downloads/];</li>
-<li>ein Verwaltungstool: EMS SQL Manager for MySQL Freeware [http://www.sqlmanager.net/fr/products/mysql/manager/download].</li>
+<li>SGBD: [http://dev.mysql.com/downloads/];</li>
+<li>ein Verwaltungstool: EMS, SQL, Manager für MySQL, Freeware [http://www.sqlmanager.net/fr/products/mysql/manager/download].</li>
 </ul>
-<p><strong>Das DBMS PostgreSQL 9.2.1</strong>:</p>
+<p><strong>Das SGBD PostgreSQL 9.2.1</strong>:</p>
 <ul>
-<li>das DBMS: [http://www.enterprisedb.com/products-services-training/pgdownload#windows];</li>
-<li>ein Verwaltungstool: EMS SQL Manager for PostgreSQL Freeware [http://www.sqlmanager.net/fr/products/postgresql/manager/download].</li>
+<li>SGBD: [http://www.enterprisedb.com/products-services-training/pgdownload#windows];</li>
+<li>ein Verwaltungstool: EMS SQL Manager für PostgreSQL Freeware [http://www.sqlmanager.net/fr/products/postgresql/manager/download].</li>
 </ul>
-<p><strong>Das DBMS Firebird 2.1</strong>:</p>
+<p><strong>SGBD Firebird 2.1</strong>:</p>
 <ul>
-<li>das DBMS: [http://www.firebirdsql.org/en/firebird-2-1-5/];</li>
+<li>SGBD: [http://www.firebirdsql.org/en/firebird-2-1-5/];</li>
 <li>ein Verwaltungstool: EMS SQL Manager für InterBase/Firebird Freeware [http://www.sqlmanager.net/fr/products/ibfb/manager/download].</li>
 </ul>
-<p><strong>LINQPad 4</strong>: ein Tool zum Erlernen von LINQ (Language INtegrated Query) [http://www.linqpad.net/, http://www.linqpad.net/GetFile.aspx?LINQPad4.zip].</p>
-<p><a id="refheading39711804107930"></a></p>
-<h2 id="13-quellcode">1.3. <span style="color: #4f81bd">Quellcode</span></h2>
-<p>Der Quellcode für die folgenden Beispiele ist |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQA344nuzMpNRIgz2_KIs-hJAahtX594ypVZCAsY8Fxt4R8?e=FSQY8c">HIER</a>| verfügbar.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006740000038FC08B9EA9.png" width="578" height="319" style="display:inline-block; margin:4px;width:15.3cm;height:8.437cm;" class="odt-zoomable" data-zoom-src="images/10000000000006740000038FC08B9EA9.png" /></td></tr></table>
+<p><strong>LINQPad 4</strong>: Ein Lernprogramm für LINQ (Sprache INtegrated Query) [http://www.linqpad.net/, http://www.linqpad.net/GetFile.aspx?LINQPad4.zip].</p>
+<p><span id="refheading39711804107930" name="refheading39711804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="13-die-quellcodes">1.3. <span style="color: #4f81bd">Die Quellcodes</span></h2>
+<p>Die Quellcodes der folgenden Beispiele sind unter URL und [<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQA344nuzMpNRIgz2_KIs-hJAahtX594ypVZCAsY8Fxt4R8?e=crgPAO">HIER</a>] verfügbar.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006740000038FC08B9EA9.png" width="578" height="319" style="display:inline-block; margin:4px;width:15.3cm;height:8.44cm;" class="odt-zoomable" data-zoom-src="images/10000000000006740000038FC08B9EA9.png" /></td></tr></table>
 
-<p>Es handelt sich um Visual Studio 2012-Projekte [1], die in einer Lösung [2] zusammengefasst sind. Im Ordner [databases] befindet sich für jedes verwendete DBMS ein eigener Ordner. Diese Ordner enthalten die SQL-Skripte zur Erstellung der Beispieldatenbank für die jeweiligen DBMS.</p>
-<p><a id="refheading39713804107930"></a></p>
-<h2 id="14-der-ansatz">1.4. <span style="color: #4f81bd">Der Ansatz</span></h2>
-<p>Um mehr über <strong>Entity Framework 5 Code First</strong> zu erfahren, habe ich mit dem folgenden Buch begonnen: <strong>„Professional ASP.NET MVC</strong> 3“ von Jon Galloway, Phil Haack, Brad Wilson und Scott Allen, erschienen bei Wrox. In der Beispielanwendung des Buches verwenden die Autoren  <strong>Entity Framework</strong> (<strong>EF</strong>) als ORM. Da ich damit nicht vertraut war, habe ich im Internet recherchiert, um mehr darüber zu erfahren. Ich stellte fest, dass die aktuellste Version EF 5 war und dass es Inkompatibilitäten mit EF 4 gab, da der Code aus dem Buch bei Tests mit EF 5 Kompilierungsfehler verursachte.</p>
-<p>Dann stellte ich fest, dass es mehrere Möglichkeiten gibt, EF zu verwenden:</p>
+<p>Es handelt sich um Visual Studio 2012-Projekte ([1]), die in einer Lösung ([2]) zusammengefasst sind. In einem Ordner [databases] befindet sich für jedes verwendete SGBD ein eigener Ordner. Darin befinden sich die Skripte SQL zur Erstellung der Beispieldatenbank für diese SGBD.</p>
+<p><span id="refheading39713804107930" name="refheading39713804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="14-die-vorgehensweise">1.4. <span style="color: #4f81bd">Die Vorgehensweise</span></h2>
+<p>Um mich mit <strong>Entity Framework 5 Code First</strong> vertraut zu machen, habe ich zunächst das folgende Buch herangezogen: <strong>„Professional ASP.NET MVC</strong> 3“ von Jon Galloway, Phil Haack, Brad Wilson und Scott Allen, erschienen bei Wrox. In der Beispielanwendung dieses Buches verwenden die Autoren <strong>Entity Framework</strong> (<strong>EF</strong>) als ORM. Da ich mich damit nicht auskannte, habe ich im Internet recherchiert, um mehr darüber zu erfahren. Dabei habe ich festgestellt, dass die aktuellste Version EF 5 ist und dass es Inkompatibilitäten mit EF 4 gibt, da der im Buch beschriebene Code beim Testen mit EF 5 Kompilierungsfehler aufwies.</p>
+<p>Anschließend habe ich herausgefunden, dass es mehrere Möglichkeiten gibt, EF zu verwenden:</p>
 <ul>
-<li><strong>Model First</strong>: Es gibt viele Artikel zu diesem Ansatz für EF, zum Beispiel [http://msdn.microsoft.com/en-us/data/ff830362.aspx]. Dieser Artikel beginnt wie folgt:</li>
+<li><strong>Model First</strong>: Es gibt zahlreiche Artikel zu diesem Ansatz von EF, zum Beispiel [http://msdn.microsoft.com/en-us/data/ff830362.aspx]. Dieser Artikel beginnt wie folgt:</li>
 </ul>
-<p><strong>Zusammenfassung</strong>: In diesem Artikel befassen wir uns mit dem neuen Entity Framework 4, das mit .NET Framework 4 und Visual Studio 2010 ausgeliefert wird. Ich werde erläutern, wie Sie die Nutzung aus einer Model-First-Perspektive angehen können, basierend auf der Prämisse, dass Sie das Datenbankdesign von einem Modell aus steuern und sowohl Ihre Datenbank als auch Ihre Datenzugriffsschicht deklarativ aus diesem Modell aufbauen können. Das Modell enthält die Beschreibung Ihrer Daten, dargestellt als Entitäten und Beziehungen, und bietet einen leistungsstarken Ansatz für die Arbeit mit ADO.NET sowie eine Trennung der Anliegen durch eine Abstraktion zwischen einer Modelldefinition und ihrer Implementierung.</p>
-<p>Ein ORM überbrückt die Lücke zwischen Datenbanktabellen und Klassen.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007DB000001801B234BCE.png" width="680" height="130" style="display:inline-block; margin:4px;width:17.999cm;height:3.438cm;" class="odt-zoomable" data-zoom-src="images/10000000000007DB000001801B234BCE.png" /></td></tr></table>
+<p><strong>Zusammenfassung</strong>: In diesem Beitrag befassen wir uns mit dem neuen Entity Framework 4, das im Lieferumfang von .NET Framework 4 und Visual Studio 2010 enthalten ist. Ich werde erläutern, wie Sie die Verwendung aus einer „Model-First“-Perspektive angehen können, wobei die Prämisse gilt, dass Sie das Datenbankdesign anhand eines Modells steuern und sowohl Ihre Datenbank als auch Ihre Datenzugriffsschicht deklarativ auf der Grundlage dieses Modells erstellen können. Das Modell enthält die Beschreibung Ihrer Daten, dargestellt als Entitäten und Beziehungen, und bietet damit einen leistungsstarken Ansatz für die Arbeit mit ADO.NET, indem es durch eine Abstraktion zwischen der Modelldefinition und ihrer Implementierung eine Trennung der Anliegen ermöglicht.</p>
+<p>Ein ORM bildet die Brücke zwischen Datenbanktabellen und Klassen.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007DB000001801B234BCE.png" width="680" height="130" style="display:inline-block; margin:4px;width:17.999cm;height:3.436cm;" class="odt-zoomable" data-zoom-src="images/10000000000007DB000001801B234BCE.png" /></td></tr></table>
 
 <p>Oben,</p>
 <ul>
-<li>links von der EF5-Schicht befinden sich Objekte, die wir Entitäten nennen;</li>
-<li>rechts von der EF5-Schicht befinden sich Datenbanktabellen.</li>
+<li>links von der Schicht EF5 befinden sich Objekte, die als Entitäten bezeichnet werden;</li>
+<li>rechts von der Schicht EF5 befinden sich Datenbanktabellen.</li>
 </ul>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007E6000001174D032921.png" width="680" height="94" style="display:inline-block; margin:4px;width:17.999cm;height:2.484cm;" class="odt-zoomable" data-zoom-src="images/10000000000007E6000001174D032921.png" /></td></tr></table>
 
-<p>Die [DAO]-Schicht arbeitet mit Objekten, die Datenbanktabellen repräsentieren. Diese Objekte sind in einem Persistenzkontext zusammengefasst und werden als Entitäten (Entity) bezeichnet. Änderungen an den Entitäten werden über das ORM in den Datenbanktabellen übernommen (Einfügen, Ändern, Löschen). Zusätzlich verwendet die [DAO]-Schicht ein Abfragesprachen , das LINQ to Entities (Language-Integrated Query) genannt wird und Entitäten statt Tabellen abfragt. Der Model-First-Ansatz beinhaltet die Erstellung von Entitäten mithilfe eines grafischen Tools. Sie definieren jede Entität und die Beziehungen, die sie mit anderen verbinden. Sobald dies geschehen ist, generiert das Tool:</p>
+<p>Die Ebene [DAO] arbeitet mit Bildobjekten aus den Datenbanktabellen. Diese Objekte werden in einem Persistenzkontext zusammengefasst und als Entitäten (Entity) bezeichnet. Änderungen an den Entitäten werden über die Schicht ORM in die Datenbanktabellen übernommen (Einfügen, Ändern, Löschen). Darüber hinaus verfügt die Schicht [DAO] über eine Abfragesprache namens „LINQ to Entity“ (Language INtegrated Query), die Abfragen auf Entitäten und nicht auf Tabellen durchführt. Bei der <strong>„Model-First“-Methode</strong> werden die Entitäten mit einem grafischen Tool erstellt. Man definiert jede Entität und die Beziehungen, die sie mit anderen verbinden. Anschließend ermöglicht ein Tool die Generierung:</p>
 <ul>
 <li>die verschiedenen Klassen, die die grafisch erstellten Entitäten widerspiegeln;</li>
-<li>die DDL (Data Definition Language), die zur Generierung der Datenbank verwendet wird.</li>
+<li>die DDL (Data Definition Language), mit der die Datenbank generiert werden kann.</li>
 </ul>
-<p>Die Beispiele, die ich für diese Methode gefunden habe, verwendeten alle Visual Studio 2010 Professional und ein Modell namens <strong>ADO.NET Entity Data Model</strong>. Ich konnte dieses Modell zwar mit Visual Studio 2010 Professional testen, doch als ich zu Visual Studio Express 2012 wechselte – meiner eigentlichen Zielumgebung –, stellte ich fest, dass dieses Modell dort nicht mehr verfügbar war. Daher habe ich diesen Ansatz aufgegeben.</p>
+<p>Die Beispiele, die ich zu dieser Methode gefunden habe, verwendeten alle Visual Studio 2010 Professional und ein Modell namens <strong>„ADO.NET Entity Data Model</strong>“. Ich konnte dieses Modell mit Visual Studio 2010 Professional testen, doch als ich zu Visual Studio Express 2012 wechselte, das mein Ziel war, stellte ich fest, dass dieses Modell nicht mehr verfügbar war. Daher habe ich diesen Ansatz aufgegeben.</p>
 <ul>
-<li><strong>Database First</strong>: Ausgangspunkt für diese Methode ist eine vorhandene Datenbank. Von dort aus generiert ein Tool automatisch die Entitätsmodelle für die Datenbanktabellen. Auch hier verwenden die Beispiele, die ich gefunden habe, wie beispielsweise [http://msdn.microsoft.com/en-us/data/gg685489.aspx], Visual Studio 2010 Professional und das ADO.NET Entity Data Model. Daher habe ich auch diesen Ansatz aufgegeben, obwohl er mir am besten gefiel. Um zu bestimmen, welche Entitäten als Darstellungen einer bestehenden Datenbank verwendet werden sollten, war es naheliegend, mit einem Tool zu beginnen, das diese generiert.</li>
-<li><strong>Code First</strong>: Man schreibt die Klassen, aus denen die Entitäten bestehen, selbst. Dies erfordert zumindest ein grundlegendes Verständnis der Funktionsweise von EF. Diesen Ansatz habe ich gewählt, da er mit Visual Studio Express 2012 kompatibel war.</li>
+<li><strong>„Database First</strong>“: Ausgangspunkt dieser Methode ist eine bestehende Datenbank. Auf dieser Grundlage generiert ein Tool automatisch die Entitätsmodelle der Datenbanktabellen. Auch hier verwenden die gefundenen Beispiele, zum Beispiel „[http://msdn.microsoft.com/en-us/data/gg685489.aspx]“, Visual Studio 2010 Professional und das Modell „ADO.NET Entity Data Model“. Daher habe ich auch diesen Ansatz aufgegeben, obwohl er eigentlich mein Favorit war. Um herauszufinden, welche Entitäten als Abbilder einer bestehenden Datenbank verwendet werden sollten, war es einfach, mit einem Tool zu beginnen, das diese generiert.</li>
+<li><strong>Code First</strong>: Man schreibt selbst die Klassen, aus denen die Entitäten bestehen sollen. Dazu muss man über ein Mindestmaß an Kenntnissen über die Funktionsweise von EF verfügen. Diesen Weg habe ich eingeschlagen, da er mit Visual Studio Express 2012 umsetzbar war.</li>
 </ul>
-<p>Vor diesem Hintergrund ging ich wie folgt vor:</p>
+<p>Nachdem ich das verstanden hatte, ging ich wie folgt vor:</p>
 <ul>
-<li>Ich habe Code für SQL Server Express 2012 geschrieben, da dies das DBMS ist, für das die meisten Beispiele verfügbar sind;</li>
-<li>sobald dieser Code debuggt war, habe ich ihn auf die anderen DBMS (Firebird, Oracle, MySQL, PostgreSQL) portiert.</li>
+<li>Ich habe Code für SQL Server Express 2012 geschrieben, da es für diese Version die meisten Beispiele gibt;</li>
+<li>sobald dieser Code debuggt war, habe ich ihn auf die anderen SGBD-Versionen (Firebird, Oracle, MySQL, PostgreSQL) portiert.</li>
 </ul>
-<p>Hier werden wir anders vorgehen. Ich werde zunächst den gesamten Code für SQL Server beschreiben und anschließend erläutern, wie er auf die anderen DBMS portiert wurde. Bei diesem Portierungsprozess wurden folgende Anpassungen vorgenommen:</p>
+<p>Hier werden wir anders vorgehen. Zunächst werde ich den gesamten Code für den SQL-Server beschreiben und anschließend die Portierung auf die anderen SGBD erläutern. Bei dieser Portierung werden folgende Anpassungen vorgenommen:</p>
 <ul>
-<li>Datenbanken verfügen über proprietäre Funktionen. Insbesondere habe ich Trigger verwendet, um den Inhalt bestimmter Spalten automatisch zu generieren. Jedes DBMS hat seine eigene Art, damit umzugehen;</li>
-<li>die Bildentitäten in den Tabellen können sich ändern, dies ist jedoch beabsichtigt. Ich hätte Entitäten wählen können, die für alle Datenbanken geeignet sind;</li>
-<li>Der ADO.NET-Treiber für das DBMS ändert sich;</li>
-<li>die Verbindungszeichenfolge zum DBMS ändert sich.</li>
+<li>Die Datenbanken weisen proprietäre Besonderheiten auf. Ich habe insbesondere Trigger verwendet, um den Inhalt bestimmter Spalten automatisch zu generieren. Jedes SGBD hat seine eigene Art, dies zu handhaben;</li>
+<li>Die Bildentitäten in den Tabellen können sich ändern, dies geschieht jedoch bewusst. Ich hätte auch Entitäten wählen können, die für alle Datenbanken geeignet sind;</li>
+<li>der Treiber ADO.NET des SGBD ändert sich;</li>
+<li>Die Verbindungszeichenfolge zum SGBD ändert sich.</li>
 </ul>
-<p>Der gewählte Ansatz ist wie folgt:</p>
+<p>Es wird wie folgt vorgegangen:</p>
 <ul>
-<li>Entitäts-/Datenbank-Zuordnung. Befüllen der Datenbank;</li>
-<li>Auslesen der Datenbank mithilfe von LINQ-Abfragen;</li>
-<li>LINQPad, ein Tool zum Erlernen von LINQ;</li>
+<li>Zuordnung von Entitäten zur Datenbank. Befüllung der Datenbank;</li>
+<li>Datenbank-Dump mit Abfragen LINQ;</li>
+<li>LINQPad, ein Lernwerkzeug für LINQ;</li>
 <li>Hinzufügen, Löschen und Ändern von Entitäten;</li>
-<li>Verwaltung des parallelen Zugriffs;</li>
-<li>In einer Transaktion gespeicherter Persistenzkontext;</li>
-<li>Ändern einer Entität außerhalb des Persistenzkontexts;</li>
+<li>Verwaltung der Zugriffskonkurrenz;</li>
+<li>in einer Transaktion gespeicherter Persistenzkontext;</li>
+<li>Änderung einer Entität außerhalb des Persistenzkontexts;</li>
 <li>Eager- und Lazy-Loading;</li>
-<li>Aufbau der [DAO]-Schicht;</li>
-<li>Aufbau der ASP.NET-Webschicht.
-<a id="refheading39715804107930"></a></li>
+<li>Aufbau der Schicht [DAO];</li>
+<li>Aufbau der Webschicht ASP.NET.</li>
 </ul>
+<p><span id="refheading39715804107930" name="refheading39715804107930" class="odt-bookmark-anchor"></span></p>
 <h2 id="15-zielgruppe">1.5. <span style="color: #4f81bd">Zielgruppe</span></h2>
-<p>Dieses Dokument richtet sich an <strong>Anfänger</strong>.</p>
-<p>Dieses Dokument ist kein Kurs zu <strong>Entity Framework 5 Code First</strong>. Dazu empfiehlt sich beispielsweise die Lektüre von <strong>„Programming Entity Framework: Code</strong> First“ von Julie Lerman und Rowan Miller, erschienen bei O&#x27;Reilly. Dieses Dokument erhebt keinen Anspruch auf Vollständigkeit, sondern skizziert lediglich den Ansatz, den ich zum Verständnis dieses ORM verwendet habe. Ich glaube, dass dieser Ansatz für andere, die mit EF5 arbeiten, nützlich sein kann. Mein Ziel geht nicht über diesen Rahmen hinaus.</p>
-<p><a id="refheading39717804107930"></a></p>
-<h2 id="16-verwandte-artikel-auf-developpezcom">1.6. <span style="color: #4f81bd">Verwandte Artikel auf developpez.com</span></h2>
-<p>Das oben genannte Buch dient als Referenz. Auf <em>developpez.com</em> gibt es auch Artikel, die sich speziell mit Entity Framework befassen. Hier sind einige davon:</p>
+<p>Die Zielgruppe sind <strong>Anfänger</strong>.</p>
+<p>Dieses Dokument ist kein Kurs zu <strong>Entity Framework 5 Code First</strong>. Dazu kann man beispielsweise <strong>„Programming Entity Framework: Code</strong> First“ von Julie Lerman und Rowan Miller, erschienen bei O’Reilly, lesen. Das Dokument erhebt keinerlei Anspruch auf Vollständigkeit, sondern stellt lediglich die Vorgehensweise dar, die ich zum Verständnis dieses ORM verwendet habe. Ich denke, dass diese Vorgehensweise auch anderen Personen helfen kann, die sich mit EF5 beschäftigen. Mein Ziel geht nicht über diesen Rahmen hinaus.</p>
+<p><span id="refheading39717804107930" name="refheading39717804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="16-verwandte-artikel-zu-developpezcom">1.6. <span style="color: #4f81bd">Verwandte Artikel zu developpez.com</span></h2>
+<p>Das oben genannte Buch dient als Nachschlagewerk. Darüber hinaus gibt es Artikel zum Entity Framework auf <em>developpez.com</em>. Hier sind einige davon:</p>
 <ul>
-<li>„<a href="http://reward.developpez.com/tutoriels/dotnet/entity-framework/approche-code-first/"><u><span style="color: #0563c1">Entity Framework – der Code-First-Ansatz</span></u></a>“, Juni 2012 – von <a href="http://www.developpez.net/forums/u44091/reward/"><u><span style="color: #0563c1">Reward</span></u></a>. Dieser Artikel und das vorliegende Dokument überschneiden sich teilweise. Er geht jedoch auf bestimmte Punkte näher ein, insbesondere hinsichtlich der „Zuordnung“ von Klassenvererbung &lt;--&gt; Tabellen;</li>
-<li>„<a href="http://pmusso.developpez.com/tutoriels/dotnet/entity-framework/introduction/"><u><span style="color: #0563c1">Einführung in Entity Framework</span></u></a>“, Dezember 2008, von <a href="http://pmusso.developpez.com/"><u><span style="color: #0563c1">Paul Musso</span></u></a>;</li>
+<li>„<a href="http://reward.developpez.com/tutoriels/dotnet/entity-framework/approche-code-first/"><u><span style="color: #0563c1">Entity Framework – der</span></u></a> Code-First-Ansatz“, Juni 2012 – von <a href="http://www.developpez.net/forums/u44091/reward/"><u><span style="color: #0563c1">Reward</span></u></a>. Dieser Artikel und das vorliegende Dokument überschneiden sich teilweise. Er geht jedoch in einigen Punkten weiter ins Detail, insbesondere beim „Mapping“ der Vererbung von Klassen &lt;--&gt; Tabellen;</li>
+<li>„<a href="http://pmusso.developpez.com/tutoriels/dotnet/entity-framework/introduction/"><u><span style="color: #0563c1">Einführung in das Entity</span></u></a> Framework“, Dezember 2008, von <a href="http://pmusso.developpez.com/"><u><span style="color: #0563c1">Paul Musso</span></u></a>;</li>
 <li>„<a href="http://dotnet.developpez.com/mvc/mvc-entity-framework/"><u><span style="color: #0563c1">Erstellen eines Klassenmodells mit Entity</span></u></a> Framework“, April 2009, von <a href="http://dotnet.developpez.com/mvc/mvc-entity-framework/"><u><span style="color: #0563c1">Jérôme Lambert</span></u></a>;</li>
-<li>„<a href="http://immobilis.developpez.com/tutoriels/dotnet/test-performance-acces-donnees-linq-vs-sql-vs-entity-framework/"><u><span style="color: #0563c1">Leistungsmessung von Linq to SQL im Vergleich zu SQL und Entity Framework</span></u></a>“, Juni 2011, von <a href="http://www.developpez.net/forums/u33118/immobilis/"><u><span style="color: #0563c1">Immobilis</span></u></a>;</li>
-<li>„<a href="http://blog.developpez.com/lilroma/p11097/net/entity_framework_code_first_activer_la_m"><u><span style="color: #0563c1">Entity Framework Code First: Automatische Migration aktivieren</span></u></a>“, Juni 2012, von <a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>;</li>
-<li>„<a href="http://rdonfack.developpez.com/tutoriels/dotnet/webmatrix-application-crud-entity-framework/"><u><span style="color: #0563c1">Erstellen einer CRUD-Anwendung mit WebMatrix, Razor und Entity Framework</span></u></a>“, Mai 2012, von <a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>;</li>
-<li>„<a href="http://rdonfack.developpez.com/tutoriels/dotnet/entity-framework-decouverte-code-first-migrations/codefirstmigrations.pdf"><u><span style="color: #0563c1">Entity Framework: Code-First-Migrationen erkunden</span></u></a>“, Juni 2012, von <a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>;</li>
+<li><a href="http://immobilis.developpez.com/tutoriels/dotnet/test-performance-acces-donnees-linq-vs-sql-vs-entity-framework/"><u><span style="color: #0563c1">„Leistungsmessung von Linq to SQL im Vergleich zu SQL und Entity</span></u></a> Framework“, Juni 2011, <a href="http://www.developpez.net/forums/u33118/immobilis/"><u><span style="color: #0563c1">von Immobilis</span></u></a>;</li>
+<li>„<a href="http://blog.developpez.com/lilroma/p11097/net/entity_framework_code_first_activer_la_m"><u><span style="color: #0563c1">Entity Framework Code First: Automatische Migration</span></u></a> aktivieren“, Juni 2012, von <a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>;</li>
+<li><a href="http://rdonfack.developpez.com/tutoriels/dotnet/webmatrix-application-crud-entity-framework/"><u><span style="color: #0563c1">„Erstellung einer CRUD-Anwendung mit WebMatrix, Razor und Entity</span></u></a> Framework“, Mai 2012, von <a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>;</li>
+<li>„<a href="http://rdonfack.developpez.com/tutoriels/dotnet/entity-framework-decouverte-code-first-migrations/codefirstmigrations.pdf"><u><span style="color: #0563c1">Entity Framework: Eine Einführung in Code First-Migrationen</span></u></a>“, Juni 2012, von <a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>;</li>
 </ul>
-<p>Wie oben erwähnt, ist dieses Dokument nicht vollständig. Lesern empfiehlt es sich, die oben aufgeführten Artikel zu konsultieren, um bestimmte Lücken zu schließen. Meine Recherche ist möglicherweise unvollständig. Ich entschuldige mich bei allen Autoren, die ich möglicherweise übersehen habe.</p>
+<p>Wie oben bereits erwähnt, ist das vorliegende Dokument nicht vollständig. Es empfiehlt sich, die oben genannten Artikel zu lesen, um gewisse Lücken zu schließen. Meine Recherche ist möglicherweise unvollständig. Ich bitte die Autoren, die ich möglicherweise vergessen habe, um Entschuldigung.</p>
 
 
 

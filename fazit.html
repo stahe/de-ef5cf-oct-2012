@@ -330,14 +330,14 @@
   
   
     <li class="md-nav__item">
-      <a href="das---eine-fallstudie.html" class="md-nav__link">
+      <a href="die--fallstudie.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Das „ “: Eine Fallstudie
+    2. Die -Fallstudie
   
 
     
@@ -542,20 +542,20 @@
   
 
 
-<p><a id="refheading39831804107930"></a></p>
+<p><span id="refheading39831804107930" name="refheading39831804107930" class="odt-bookmark-anchor"></span></p>
 <h1 id="8-fazit">8. <span style="color: #365f91">Fazit</span></h1>
-<p><span style="color: #000000">In diesem Dokument haben wir zunächst Entity Framework 5 Code First (EF 5) kennengelernt. Anschließend haben wir die folgende Anwendung portiert, die das NHibernate-ORM verwendete:</span></p>
+<p><span style="color: #000000">In diesem Dokument haben wir zunächst Entity Framework 5 Code First (EF 5) kennengelernt. Anschließend haben wir die folgende Anwendung portiert, die ORM und NHibernate verwendete:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005EA00000115D91908D8.png" width="680" height="124" style="display:inline-block; margin:4px;width:17.999cm;height:3.293cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EA00000115D91908D8.png" /></td></tr></table>
 
-<p>auf die folgende Architektur, die das EF 5 ORM verwendet:</p>
+<p>in die folgende Architektur, die ORM und EF 5 verwendet:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005E50000011F327B2216.png" width="680" height="129" style="display:inline-block; margin:4px;width:17.999cm;height:3.424cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E50000011F327B2216.png" /></td></tr></table>
 
-<p>Wir haben diese Architektur unter Verwendung von fünf DBMS aufgebaut. Die Portabilität zwischen den DBMS war zwar nicht immer zu 100 % gegeben, dennoch war sie äußerst zufriedenstellend. </p>
+<p>Wir haben diese letzte Architektur mit fünf SGBD aufgebaut. Auch wenn die Portabilität zwischen SGBD nicht immer 100 % betrug, war sie dennoch äußerst zufriedenstellend. </p>
 <p>Wir haben einige Grundsätze gelernt:</p>
 <ul>
-<li>Alle untersuchten DBMS verfügen über eine Lösung zur automatischen Generierung von Primärschlüsselwerten;</li>
-<li>um den gleichzeitigen Zugriff auf Datenbankentitäten zu verwalten, scheint eine durch Trigger automatisch inkrementierte Integer-Spalte eine von allen akzeptierte Lösung zu sein;</li>
-<li>im Lazy-Loading-Modus ist es wichtig, dass Entitäten die mit ihnen verbundenen Fremdschlüsselwerte kapseln. Dies ermöglicht es dann, die Abhängigkeiten der Entität aus der Datenbank abzurufen.</li>
+<li>Alle untersuchten SGBD verfügen über eine Lösung zur automatischen Generierung der Primärschlüsselwerte;</li>
+<li>um den gleichzeitigen Zugriff auf Entitäten in der Datenbank zu verwalten, scheint eine Ganzzahlspalte, die durch Trigger automatisch inkrementiert wird, eine von allen akzeptierte Lösung zu sein;</li>
+<li>im Lazy-Loading-Modus ist es wichtig, dass die Entitäten die Werte der mit ihnen verknüpften Fremdschlüssel kapseln. Dies ermöglicht es anschließend, die Abhängigkeiten der Entität aus der Datenbank abzurufen.</li>
 </ul>
 
 
